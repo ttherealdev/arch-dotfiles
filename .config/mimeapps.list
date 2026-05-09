@@ -1,0 +1,72 @@
+[Default Applications]
+# Web
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+
+# File manager
+inode/directory=org.gnome.Nautilus.desktop
+
+# Images
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+image/gif=org.gnome.Loupe.desktop
+image/webp=org.gnome.Loupe.desktop
+image/svg+xml=org.gnome.Loupe.desktop
+image/bmp=org.gnome.Loupe.desktop
+image/tiff=org.gnome.Loupe.desktop
+image/x-xcf=org.gnome.Loupe.desktop
+
+# Video
+video/mp4=mpv.desktop
+video/mkv=mpv.desktop
+video/webm=mpv.desktop
+video/x-matroska=mpv.desktop
+video/avi=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/mpeg=mpv.desktop
+video/ogg=mpv.desktop
+video/quicktime=mpv.desktop
+
+# Audio
+audio/mpeg=mpv.desktop
+audio/flac=mpv.desktop
+audio/ogg=mpv.desktop
+audio/wav=mpv.desktop
+audio/x-wav=mpv.desktop
+audio/aac=mpv.desktop
+audio/mp4=mpv.desktop
+audio/opus=mpv.desktop
+
+# Documents
+application/pdf=org.gnome.Evince.desktop
+application/msword=libreoffice-writer.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
+application/vnd.ms-excel=libreoffice-calc.desktop
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop
+application/vnd.ms-powerpoint=libreoffice-impress.desktop
+application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop
+
+# Archives
+application/zip=org.gnome.FileRoller.desktop
+application/x-tar=org.gnome.FileRoller.desktop
+application/x-compressed-tar=org.gnome.FileRoller.desktop
+application/x-7z-compressed=org.gnome.FileRoller.desktop
+application/x-rar=org.gnome.FileRoller.desktop
+application/gzip=org.gnome.FileRoller.desktop
+application/x-bzip2=org.gnome.FileRoller.desktop
+application/x-xz=org.gnome.FileRoller.desktop
+application/zstd=org.gnome.FileRoller.desktop
+
+# Text / Code
+text/plain=org.gnome.TextEditor.desktop
+text/x-script.python=org.gnome.TextEditor.desktop
+text/x-shellscript=org.gnome.TextEditor.desktop
+text/x-csrc=org.gnome.TextEditor.desktop
+text/css=org.gnome.TextEditor.desktop
+application/json=org.gnome.TextEditor.desktop
+application/xml=org.gnome.TextEditor.desktop
+text/markdown=org.gnome.TextEditor.desktop

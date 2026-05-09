@@ -166,6 +166,16 @@ ARCH_PKGS=(
     "wmctrl" "power-profiles-daemon" "easyeffects" "swayosd-git" "nautilus" "lsp-plugins" "hyprpolkitagent"
     "qt5-wayland" "qt5-quickcontrols" "qt5-quickcontrols2" "qt5-graphicaleffects" "qt6-wayland"
     "qt5ct" "qt6ct" "gpu-screen-recorder" "adw-gtk-theme"
+    # ── DE infrastructure ──
+    "gvfs" "gvfs-mtp" "gvfs-smb"
+    "tumbler" "ffmpegthumbnailer"
+    "file-roller" "unrar"
+    "udisks2" "udiskie"
+    "blueman"
+    "xdg-user-dirs"
+    "loupe" "gnome-text-editor" "gnome-calculator" "gnome-font-viewer" "evince"
+    "hyprpicker" "nwg-menu"
+    "network-manager-applet"
 )
 
 PKGS=("${ARCH_PKGS[@]}")
@@ -621,6 +631,17 @@ manage_keyboard() {
             selected_names+=("$name")
         fi
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 
     while true; do
         draw_header
@@ -668,6 +689,17 @@ manage_keyboard() {
         VISITED_KEYBOARD=true
         break
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 }
 
 show_overview() {
@@ -811,6 +843,17 @@ set_weather_api() {
         VISITED_WEATHER=true
         break
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 }
 
 manage_telemetry() {
@@ -873,6 +916,17 @@ manage_telemetry() {
             *) break ;;
         esac
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 }
 
 prompt_optional_features_menu() {
@@ -884,6 +938,17 @@ prompt_optional_features_menu() {
             break
         fi
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 
     local DM_LABEL="Display Manager Integration (SDDM)"
     if [[ "$CURRENT_DM" == "sddm" ]]; then
@@ -1068,6 +1133,17 @@ prompt_optional_features_menu() {
             return 0 
         fi
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 }
 
 # ==============================================================================
@@ -1218,6 +1294,17 @@ else
         fi
         sleep 0.5
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 fi
 
 # --- 1.5. Advanced Proprietary NVIDIA Setup (Only if explicitly selected) ---
@@ -1252,6 +1339,17 @@ if [[ "$REPLACE_DM" == true ]]; then
             sudo pacman -Rns --noconfirm "$dm" > /dev/null 2>&1 || true
         fi
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 fi
 
 if [[ "$INSTALL_SDDM" == true ]]; then
@@ -1394,6 +1492,17 @@ if [ "$DO_FULL_INSTALL" = true ]; then
             printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "$folder"
         fi
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
 else
     # Partial Update Logic (Git Diff)
     CHANGED_FILES=""
@@ -1783,6 +1892,13 @@ sudo systemctl enable NetworkManager.service
 printf "  -> NetworkManager enabled %-20s ${C_GREEN}[ OK ]${RESET}\n" ""
 sudo systemctl enable --now power-profiles-daemon.service 2>/dev/null || true
 printf "  -> Power Profiles Daemon enabled %-13s ${C_GREEN}[ OK ]${RESET}\n" ""
+sudo systemctl enable --now bluetooth.service 2>/dev/null || true
+printf "  -> Bluetooth enabled %-27s ${C_GREEN}[ OK ]${RESET}\n" ""
+sudo systemctl enable --now udisks2.service 2>/dev/null || true
+printf "  -> UDisks2 (USB automount) enabled %-11s ${C_GREEN}[ OK ]${RESET}\n" ""
+xdg-user-dirs-update 2>/dev/null || true
+printf "  -> XDG user dirs created %-22s ${C_GREEN}[ OK ]${RESET}\n" ""
+printf "  -> Power Profiles Daemon enabled %-13s ${C_GREEN}[ OK ]${RESET}\n" ""
 
 # 7. Setup SDDM Theme and Config
 if [[ "$SETUP_SDDM_THEME" == true ]]; then
@@ -1881,6 +1997,17 @@ if [ ${#FAILED_PKGS[@]} -ne 0 ]; then
     for fp in "${FAILED_PKGS[@]}"; do
         echo -e "  - ${C_YELLOW}$fp${RESET}"
     done
+    # Deploy mimeapps.list (default apps)
+    if [ -f "$REPO_DIR/.config/mimeapps.list" ]; then
+        cp "$REPO_DIR/.config/mimeapps.list" "$TARGET_CONFIG_DIR/mimeapps.list"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "mimeapps.list"
+    fi
+    # Deploy nwg-menu config
+    if [ -f "$REPO_DIR/.config/nwg-menu/config" ]; then
+        mkdir -p "$TARGET_CONFIG_DIR/nwg-menu"
+        cp "$REPO_DIR/.config/nwg-menu/config" "$TARGET_CONFIG_DIR/nwg-menu/config"
+        printf "  -> Copied %-31s ${C_GREEN}[ OK ]${RESET}\n" "nwg-menu/config"
+    fi
     echo ""
 fi
 
